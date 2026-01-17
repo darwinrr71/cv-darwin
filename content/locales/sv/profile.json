@@ -73,6 +73,6 @@
   },
   "cta": {
     "primary": { "label": "Se projekt", "href": "/projects" },
-    "secondary": { "label": "Ladda ner CV (PDF)", "href": "/cv/CV-Darwin_Rengifo_WEB.pdf" }
+    "secondary": { "label": "Ladda ner CV (PDF)", "href": "/cv/CV-Darwin.pdf" }
   }
 }
