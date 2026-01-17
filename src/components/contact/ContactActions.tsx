@@ -1,9 +1,11 @@
+import type { ReactNode } from "react";
 import { getProfile, getSite, getUi } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { SheetClose } from "@/components/ui/sheet";
 import { EmailActionButton } from "@/components/contact/EmailActionButton";
 import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
-import { Github, Mail } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
+import { Mail } from "lucide-react";
 
 type ContactAction = "email" | "linkedin" | "github";
 
@@ -71,9 +73,9 @@ export async function ContactActions({
   const actionClassName = [useNavAction ? "nav-action" : null, buttonClassName]
     .filter(Boolean)
     .join(" ");
-  const wrapAction = (node: JSX.Element) =>
+  const wrapAction = (node: ReactNode) =>
     closeOnAction ? <SheetClose asChild>{node}</SheetClose> : node;
-  const withTooltip = (node: JSX.Element, label: string) => {
+  const withTooltip = (node: ReactNode, label: string) => {
     if (!iconOnly) {
       return wrapAction(node);
     }
@@ -91,8 +93,7 @@ export async function ContactActions({
     );
   };
 
-  const showAction = (action: ContactAction) =>
-    visibleActions.includes(action);
+  const showAction = (action: ContactAction) => visibleActions.includes(action);
 
   return (
     <div
@@ -144,7 +145,7 @@ export async function ContactActions({
             >
               <a href={githubHref} target="_blank" rel="noreferrer">
                 <span className="inline-flex items-center gap-2">
-                  <Github className="size-4" aria-hidden="true" />
+                  <GithubIcon className="size-4" />
                   <span>{githubLabel}</span>
                 </span>
               </a>
