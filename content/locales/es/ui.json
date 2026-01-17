@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Inicio", "projects": "Proyectos", "about": "Sobre m¡", "contact": "Contacto" },
+  "nav": { "home": "Inicio", "projects": "Proyectos", "about": "Sobre mi", "contact": "Contacto" },
   "actions": {
     "downloadCv": "Descargar CV (PDF)",
     "viewProjects": "Ver proyectos",
@@ -25,7 +25,7 @@
   },
   "contact": {
     "title": "Contacto",
-    "subtitle": "Si te interesa conversar, escr¡beme y coordinamos.",
+    "subtitle": "Escríbeme sin compromiso y coordinamos rápidamente un momento para hablar.",
     "form": {
       "fields": {
         "name": "Nombre completo",

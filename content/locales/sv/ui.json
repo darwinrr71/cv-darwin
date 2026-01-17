@@ -18,14 +18,14 @@
   },
   "projects": {
     "title": "Projekt",
-    "searchPlaceholder": "S”k projekt.",
+    "searchPlaceholder": "Sök projekt.",
     "viewCaseStudy": "Fallstudie",
     "repo": "Repo",
     "liveDemo": "Demo"
   },
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Om du vill prata, skicka ett meddelande s† bokar vi.",
+    "subtitle": "Skriv gärna till mig, så ser jag till att vi snabbt hittar en tid för att pratas vid.",
     "form": {
       "fields": {
         "name": "Fullständigt namn",
