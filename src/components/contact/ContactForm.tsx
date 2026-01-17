@@ -25,8 +25,15 @@ type ContactFormStrings = {
   defaultSubject: string;
 };
 
+type ContactFormStringsInput = Partial<
+  Omit<ContactFormStrings, "fields" | "validation">
+> & {
+  fields?: Partial<ContactFormStrings["fields"]>;
+  validation?: Partial<ContactFormStrings["validation"]>;
+};
+
 type ContactFormProps = {
-  strings?: Partial<ContactFormStrings>;
+  strings?: ContactFormStringsInput;
 };
 
 const defaultStrings: ContactFormStrings = {
@@ -59,7 +66,7 @@ const MAX_LENGTHS = {
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function mergeStrings(
-  overrides?: Partial<ContactFormStrings>,
+  overrides?: ContactFormStringsInput,
 ): ContactFormStrings {
   return {
     ...defaultStrings,
