@@ -1,0 +1,12 @@
+---
+title: "Isag (Frontend)"
+slug: "incasale-dev"
+---
+
+## Overview
+
+**Det här projektet dokumenterar arbetet som genomfördes under LIA 2 med projektet _ISAG_, ett _fullstack_-webbsystem baserat på _ISM 2022_.** Det inkluderar **React + TypeScript** i frontend och **Node.js/Express + TypeScript + Prisma + PostgreSQL + Zod** i backend (med **databasen hostad på Supabase**). Applikationen är **responsiv** och fungerar på desktop; den är driftsatt på **Linux-Debian** med **Apache**, **Let’s Encrypt** och en domän i **CloudNS** (CNAME mot **No-IP**).
+
+Projektet **”isag”** är uppdelat i två huvuddelar: **backend** och **frontend**. **Backend** är utformat som en **API-server** skriven i **TypeScript**, med en tydlig struktur där `prisma/` innehåller schemat och migreringarna (`schema.prisma` och `migrations/`), medan `src/` samlar applikationens logik (controllers, middleware, routes och services). I **frontend**, byggd med **React + TypeScript + Vite**, samlar `src/` koden, `main.tsx` är ingångspunkten, `App.tsx` definierar huvudkomponenten med routing och den övergripande layouten, och `api/` samlar funktioner för att interagera med backendens autentiseringsendpoints.
+
+Bland projektets starka sidor märks användningen av **TypeScript** tack vare statisk typning (förbättrar underhållbarhet och kvalitet), **Prisma** som förenklar hanteringen av databasen och migreringar på ett smidigt och säkert sätt, samt **React + Vite** som ger en modern och snabb utvecklingsmiljö för frontend. Använda teknologier: **Backend:** TypeScript, Prisma. **Frontend:** React, TypeScript, Vite.

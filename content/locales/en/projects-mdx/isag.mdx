@@ -1,0 +1,12 @@
+---
+title: "ISAG (LIA 2)"
+slug: "isag"
+---
+
+## Overview
+
+**This project documents the work carried out during LIA 2 with the _ISAG_ project, a _full stack_ web system based on _ISM 2022_.** It includes **React + TypeScript** on the frontend and **Node.js/Express + TypeScript + Prisma + PostgreSQL + Zod** on the backend (with the **database hosted on Supabase**). The application is **responsive** and works on desktop; it is deployed on **Linux-Debian** with **Apache**, **Let’s Encrypt**, and a domain on **CloudNS** (CNAME to **No-IP**).
+
+The **“isag”** project is composed of two main parts: a **backend** and a **frontend**. The **backend** is designed as an **API server** written in **TypeScript**, with a clear structure where `prisma/` contains the database schema and migrations (`schema.prisma` and `migrations/`), while `src/` contains the application logic (controllers, middleware, routes, and services). On the **frontend**, built with **React + TypeScript + Vite**, `src/` contains the application code, `main.tsx` is the entry point, `App.tsx` is the main component that sets up routing and the overall layout, and `api/` contains functions to interact with the backend authentication endpoints.
+
+Among the project’s strengths are the use of **TypeScript** thanks to static typing (improving code quality and maintainability), **Prisma** which streamlines database management and migrations for faster and safer development, and **React + Vite** which provide a modern and efficient development environment for the frontend, improving developer experience and application performance. Technologies used: **Backend:** TypeScript, Prisma. **Frontend:** React, TypeScript, Vite.

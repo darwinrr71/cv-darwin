@@ -1,0 +1,5 @@
+Copy your CV PDF into this folder and name it exactly:
+public/cv/Darwin_Rengifo_CV.pdf
+
+Then the website will link to it at:
+/cv/Darwin_Rengifo_CV.pdf

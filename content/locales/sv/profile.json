@@ -1,0 +1,78 @@
+{
+  "name": "Darwin Rengifo",
+  "role": "Fullstackutvecklare (React/Next.js · Node.js/Express · Java/Spring Boot)",
+  "location": "Södertälje, Sverige",
+  "contact": {
+    "email": "darwinrr@hotmail.com",
+    "phone": "+46 73 892 30 04"
+  },
+  "headline": "Fullstackutvecklare med stark IT-grund och praktisk erfarenhet av att bygga moderna webbapplikationer.",
+  "summary": "Jag bygger moderna webbapplikationer med fokus på ren kod, säkerhet och underhållbarhet. Slutförde Fullstack-utvecklarprogrammet (2023–2025) och levererar kontinuerligt projekt (frontend + backend) med React/Next.js, Node.js/Express, Typescript, JavaScript, Java + Spring Boot, PostgreSQL, Docker och CI/CD-grunder.",
+  "highlights": [
+    {
+      "title": "Fullstackleverans",
+      "text": "End-to-end-leverans av projekt: UI med React/Next.js, Typescript, Javascript, REST-API:er med Node/Express, PostgreSQL och driftsättning (GitHub Pages och/eller Linux), med publika repositories redo för granskning."
+    },
+    {
+      "title": "Säkerhetstänk",
+      "text": "JWT-baserad autentisering och ett säkerhetsfokus: validering av indata, felhantering och grundläggande åtkomstkontroll. Erfarenhet av att integrera säkerhet i CI/CD (SAST/SCA/container-scanning) med GitHub Actions."
+    },
+    {
+      "title": "Stark IT-bakgrund",
+      "text": "Stark IT-bakgrund med kompetens i Linuxmiljöer och serverkonfiguration, goda nätverkskunskaper samt en etablerad erfarenhet inom teknisk support och systemutveckling."
+    }
+  ],
+  "skills": {
+    "frontend": ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Material UI", "HTML5", "CSS"],
+    "backend": ["Node.js", "Express", "REST-API:er", "JWT", "Java", "Spring Boot (grundläggande)"],
+    "data": ["PostgreSQL", "Prisma", "Sequelize", "Knex"],
+    "devops": ["Docker", "CI/CD", "Linux"],
+    "other": ["Git", "Agilt/Scrum"]
+  },
+  "experience": [
+    {
+      "company": "Scania",
+      "title": "Montör",
+      "location": "Sverige",
+      "start": "2022",
+      "end": "Nuvarande",
+      "bullets": [
+        "Industrimiljö med fokus på kvalitet, säkerhet och konsekventa arbetssätt.",
+        "Tar med struktur och disciplin in i mjukvaruleverans."
+      ]
+    },
+    {
+      "company": "EMAPA San Martín S.A.",
+      "title": "IT-ansvarig / Systemutvecklare",
+      "location": "Peru",
+      "start": "2007",
+      "end": "2009",
+      "bullets": [
+        "Utvecklade och införde ett integrerat försäljningssystem.",
+        "Installerade och konfigurerade en Linux (Debian) server för kommunikation och internetdistribution."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Företaguniversitetet",
+      "program": "Utbildning i mjukvaruutveckling",
+      "start": "2023",
+      "end": "2025"
+    }
+  ],
+  "languages": [
+    { "name": "Spanska", "level": "Modersmål" },
+    { "name": "Svenska", "level": "Bra (tal och skrift)" },
+    { "name": "Engelska", "level": "Grundläggande" }
+  ],
+  "links": {
+    "github": "https://github.com/darwinrr71",
+    "linkedin": "https://www.linkedin.com/in/darwin-rengifo-676129b8/",
+    "email": "darwinrr@hotmail.com"
+  },
+  "cta": {
+    "primary": { "label": "Se projekt", "href": "/projects" },
+    "secondary": { "label": "Ladda ner CV (PDF)", "href": "/cv/CV-Darwin_Rengifo_WEB.pdf" }
+  }
+}

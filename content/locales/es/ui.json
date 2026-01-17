@@ -1,0 +1,49 @@
+{
+  "nav": { "home": "Inicio", "projects": "Proyectos", "about": "Sobre m¡", "contact": "Contacto" },
+  "actions": {
+    "downloadCv": "Descargar CV (PDF)",
+    "viewProjects": "Ver proyectos",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "copyEmail": "Copiar email",
+    "themeA": "Slate",
+    "themeB": "Warm",
+    "copied": "­Copiado!"
+  },
+  "sections": {
+    "highlights": "Highlights",
+    "experience": "Experiencia",
+    "featuredProjects": "Proyectos destacados",
+    "skills": "Skills"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "searchPlaceholder": "Buscar proyectos.",
+    "viewCaseStudy": "Ver caso",
+    "repo": "Repositorio",
+    "liveDemo": "Demo"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Si te interesa conversar, escr¡beme y coordinamos.",
+    "form": {
+      "fields": {
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "subject": "Asunto / Motivo de contacto",
+        "message": "Mensaje"
+      },
+      "submit": "Enviar mensaje",
+      "helper": "Respondo en 24 horas",
+      "success": "¡Gracias! Recibimos tu mensaje y responderemos pronto.",
+      "error": "Algo salió mal. Inténtalo de nuevo.",
+      "rateLimited": "Demasiados mensajes. Inténtalo más tarde.",
+      "defaultSubject": "Mensaje del formulario de contacto",
+      "validation": {
+        "required": "Este campo es obligatorio.",
+        "invalidEmail": "Introduce un correo electrónico válido.",
+        "maxLength": "Demasiado largo. Por favor acorta tu mensaje."
+      }
+    }
+  }
+}

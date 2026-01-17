@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "isag",
+    "title": "ISAG (LIA 2)",
+    "featured": true,
+    "oneLinerImpact": "Publicerat projekt som visar end-to-end-leverans (Recruiter Mode + Deep Dive).",
+    "description": "Byggt under LIA 2 med fokus p† struktur, tydlighet och underh†llbarhet.",
+    "tags": ["Fullstack", "TypeScript", "DevOps", "Responsive"],
+    "stack": ["React", 
+    "Node.js", 
+    "PostgreSQL (Supabase)", 
+    "Prisma ORM", 
+    "TypeScript", 
+    "Vite", 
+    "Express", 
+    "Zod",
+    "Linux (Debian/Apache)"],
+    "links": {
+      "demo": "https://www.isag-home.cloud-ip.cc/",
+      "repo": "https://github.com/darwinrr71/Isag"
+    }
+  },
+  {
+    "slug": "incasale-dev",
+    "title": "Incasale (Frontend)",
+    "featured": true,
+    "oneLinerImpact": "React + Material UI driftsatt på GitHub Pages: konsekvent UI och ren struktur.",
+    "description": "Publikt frontend fokuserat på återanvändbara komponenter och en polerad användarupplevelse.",
+    "tags": ["Frontend", "React", "UI"],
+    "stack": ["React", "Vite", "Material UI"],
+    "links": {
+      "demo": "https://darwinrr71.github.io/incasale-dev/",
+      "repo": "https://github.com/darwinrr71/incasale-dev"
+    }
+  },
+  {
+    "slug": "incastad",
+    "title": "Incastad",
+    "featured": true,
+    "oneLinerImpact": "React + Material UI sajt driftsatt pa GitHub Pages (gh-pages).",
+    "description": "Projektwebb byggd med React och Material UI, driftsatt via gh-pages pa GitHub.",
+    "tags": ["Fullstack", "Backend", "SSR", "Web Design"],
+    "stack": ["Node.js", "Express", "EJS", "jQuery", "HTML5", "CSS3"],
+    "links": {
+      "demo": "https://darwinrr71.github.io/incastad.github.io/",
+      "repo": "https://github.com/darwinrr71/incastad.github.io"
+    }
+  },
+  {
+    "slug": "electronics-embedded-systems",
+    "title": "Elektronik - Inbyggda system",
+    "featured": true,
+    "oneLinerImpact": "Design och implementering av inbyggda system genom hardvarudesign i VHDL och mjukvara i C. Integrering av Nios II soft-core-processorer pa Altera DE10-Lite-plattformen.",
+    "description": "Design och implementering av inbyggda system genom hardvarudesign i VHDL och mjukvara i C. Integrering av Nios II soft-core-processorer pa Altera DE10-Lite-plattformen.",
+    "tags": ["Inbyggda", "VHDL", "C"],
+    "stack": ["VHDL", "C", "Nios II", "Altera DE10-Lite"]
+  }
+]

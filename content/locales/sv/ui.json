@@ -1,0 +1,49 @@
+{
+  "nav": { "home": "Start", "projects": "Projekt", "about": "Om mig", "contact": "Kontakt" },
+  "actions": {
+    "downloadCv": "Ladda ner CV (PDF)",
+    "viewProjects": "Se projekt",
+    "email": "E-post",
+    "linkedin": "LinkedIn",
+    "copyEmail": "Kopiera e-post",
+    "themeA": "Slate",
+    "themeB": "Warm",
+    "copied": "Kopierat!"
+  },
+  "sections": {
+    "highlights": "H”jdpunkter",
+    "experience": "Erfarenhet",
+    "featuredProjects": "Utvalda projekt",
+    "skills": "Kompetenser"
+  },
+  "projects": {
+    "title": "Projekt",
+    "searchPlaceholder": "S”k projekt.",
+    "viewCaseStudy": "Fallstudie",
+    "repo": "Repo",
+    "liveDemo": "Demo"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Om du vill prata, skicka ett meddelande s† bokar vi.",
+    "form": {
+      "fields": {
+        "name": "Fullständigt namn",
+        "email": "E-post",
+        "subject": "Ämne / Kontaktorsak",
+        "message": "Meddelande"
+      },
+      "submit": "Skicka meddelande",
+      "helper": "Jag svarar inom 24 timmar",
+      "success": "Tack! Vi har tagit emot ditt meddelande och svarar snart.",
+      "error": "Något gick fel. Försök igen.",
+      "rateLimited": "För många meddelanden. Försök igen senare.",
+      "defaultSubject": "Kontaktformulär",
+      "validation": {
+        "required": "Det här fältet är obligatoriskt.",
+        "invalidEmail": "Ange en giltig e-postadress.",
+        "maxLength": "För långt. Vänligen korta ner."
+      }
+    }
+  }
+}

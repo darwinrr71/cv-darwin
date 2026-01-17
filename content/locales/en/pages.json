@@ -1,0 +1,69 @@
+{
+  "about": {
+    "title": "About",
+    "intro": "I'm a full-stack developer with a strong IT foundation and a practical mindset. I focus on delivering clear, maintainable solutions with solid quality.",
+    "paragraphs": [
+      "I completed the Full Stack Developer program (2023–2025), complementing the training with published real-world projects. In addition to this specialization, I bring technical knowledge in applying electronics to embedded systems, which helps me understand software through its direct interaction with hardware.",
+      "My path began in classic development environments, continuously evolving from structured and procedural programming paradigms toward modern, scalable, object-oriented architectures.",
+      "I enjoy working in teams where code is readable, security is taken seriously, and products deliver value. I value communication, discipline, and continuous improvement."
+    ],
+    "educationLabel": "Competencies:",
+    "educationCards": [
+      {
+        "id": "foretagsuniversitetet",
+        "title": "Full-Stack Developer",
+        "institutionName": "Företagsuniversitetet",
+        "institutionLocation": "Stockholm, Sweden",
+        "years": "2023 - 2025",
+        "competencies": [
+          "Working agile with Scrum",
+          "Introduction to IT",
+          "HTML5/CSS",
+          "JavaScript fundamentals",
+          "Frontend frameworks/libraries (React, Angular)",
+          "Advanced JavaScript",
+          "Internship 1 (Developer / Scrum Master)",
+          "Business acumen",
+          "Databases",
+          "Backend development Node.js",
+          "Secure application lifecycle",
+          "Backend development in Java"
+        ]
+      },
+      {
+        "id": "agstu",
+        "title": "Applied electronics for embedded systems",
+        "institutionName": "AGSTU AB - Arbete genom studier",
+        "institutionLocation": "Västerås, Sweden",
+        "years": "2017 - 2020",
+        "competencies": [
+          "VHDL programming for embedded systems",
+          "Low-level C programming and microcomputer architecture",
+          "System design with VHDL",
+          "Advanced HW/SW system design",
+          "Design methodology and technical documentation"
+        ]
+      },
+      {
+        "id": "idat",
+        "title": "Computer Science",
+        "institutionName": "Instituto Superior Tecnologico IDAT",
+        "institutionLocation": "Lima, Peru",
+        "years": "1989 - 1994",
+        "competencies": [
+          "Programming and software development",
+          "Systems analysis and design",
+          "Networks and infrastructure"
+        ]
+      }
+    ],
+    "educationTitle": "Education"
+  },
+  "contact": {
+    "title": "Let’s talk",
+    "intro": "I’m looking for my next professional challenge. If you think my profile fits your team or you have a project in mind, I’d love to hear from you."
+  }
+}
+
+
+

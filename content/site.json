@@ -1,0 +1,29 @@
+{
+  "siteName": "Darwin Rengifo — CV",
+  "author": "Darwin Rengifo Rengifo",
+  "baseUrl": "http://localhost:3000",
+  "defaultLocale": "sv",
+  "seo": {
+    "es": {
+      "title": "Darwin Rengifo — Full-Stack Developer (React/Next.js · Node.js)",
+      "description": "Portafolio y CV: proyectos full-stack, experiencia y contacto. Enfoque en calidad, seguridad y mantenibilidad."
+    },
+    "en": {
+      "title": "Darwin Rengifo — Full-Stack Developer (React/Next.js · Node.js)",
+      "description": "Portfolio and CV: full-stack projects, experience and contact. Focus on quality, security and maintainability."
+    },
+    "sv": {
+      "title": "Darwin Rengifo — Fullstackutvecklare (React/Next.js · Node.js)",
+      "description": "Portfolio och CV: fullstackprojekt, erfarenhet och kontakt. Fokus på kvalitet, säkerhet och underhållbarhet."
+    }
+  },
+  "openGraph": {
+    "image": "/og.png",
+    "twitterCard": "summary_large_image"
+  },
+  "links": {
+    "github": "https://github.com/darwinrr71",
+    "linkedin": "https://www.linkedin.com/in/darwin-rengifo-676129b8/",
+    "email": "darwinrr@hotmail.com"
+  }
+}

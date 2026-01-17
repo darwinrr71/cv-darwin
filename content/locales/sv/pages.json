@@ -1,0 +1,69 @@
+{
+  "about": {
+    "title": "Om mig",
+    "intro": "Jag är fullstackutvecklare med stark IT-grund och ett praktiskt arbetssätt. Jag fokuserar på att leverera tydliga, underhållbara lösningar med god kvalitet.",
+    "paragraphs": [
+      "Jag slutförde utbildningen till fullstackutvecklare (2023–2025) och kompletterade den med publicerade projekt från verkligheten. Utöver denna specialisering har jag tekniska kunskaper i att tillämpa elektronik i inbyggda system, vilket gör att jag kan förstå mjukvara genom dess direkta samspel med hårdvara.",
+      "Min bana började i mer klassiska utvecklingsmiljöer och har kontinuerligt utvecklats från strukturerade och procedurorienterade programmeringsparadigm till moderna, skalbara och objektorienterade arkitekturer.",
+      "Jag trivs i team där koden är läsbar, säkerhet tas på allvar och man bygger produkter som skapar värde. Jag värdesätter kommunikation, disciplin och kontinuerlig förbättring."
+    ],
+    "educationLabel": "Kompetenser:",
+    "educationCards": [
+      {
+        "id": "foretagsuniversitetet",
+        "title": "Fullstackutvecklare",
+        "institutionName": "Företagsuniversitetet",
+        "institutionLocation": "Stockholm, Sverige",
+        "years": "2023 - 2025",
+        "competencies": [
+          "Att jobba agilt med Scrum",
+          "Introduktion till IT",
+          "HTML5/CSS",
+          "JavaScript grundkurs",
+          "Frontend Ramverk/Bibliotek (React, Angular)",
+          "JavaScript Avancerat",
+          "LIA 1 (Utvecklare / Scrum Master)",
+          "Affärsmannaskap",
+          "Databaser",
+          "Backend-utveckling Node.js",
+          "Säker applikation livscykel",
+          "Backend utveckling i Java"
+        ]
+      },
+      {
+        "id": "agstu",
+        "title": "Tillämpad elektronik för inbyggda system",
+        "institutionName": "AGSTU AB - Arbete genom studier",
+        "institutionLocation": "Västerås, Sverige",
+        "years": "2017 - 2020",
+        "competencies": [
+          "VHDL-programmering för inbyggda system",
+          "Hårdvarunära C-programmering och mikrodatorarkitektur",
+          "Systemkonstruktion med VHDL",
+          "Avancerad HW/SW-systemkonstruktion",
+          "Konstruktionsmetodik och teknisk dokumentation"
+        ]
+      },
+      {
+        "id": "idat",
+        "title": "Datavetenskap",
+        "institutionName": "Instituto Superior Tecnologico IDAT",
+        "institutionLocation": "Lima, Peru",
+        "years": "1989 - 1994",
+        "competencies": [
+          "Programmering och mjukvaruutveckling",
+          "Systemanalys och design",
+          "Nätverk och infrastruktur"
+        ]
+      }
+    ],
+    "educationTitle": "Utbildning"
+  },
+  "contact": {
+    "title": "Låt oss prata",
+    "intro": "Jag söker min nästa professionella utmaning. Om du tror att min profil passar ditt team eller om du har ett projekt i åtanke, vill jag gärna höra från dig."
+  }
+}
+
+
+

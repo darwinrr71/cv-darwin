@@ -1,0 +1,10 @@
+---
+title: "Incastad"
+slug: "incastad"
+---
+
+## Oversikt
+
+Det här är en publik webbplats för ett städföretag, byggd med **Node.js + Express** och serverrenderad med **EJS**. Applikationen startar från **`index.js`**, där Express initieras och routingen monteras. Navigering och logik är tydligt separerade: **`routes/`** definierar endpoints och **`controller/uploadcontroller.js`** samlar den specifika logiken (t.ex. uppladdningar). Sidorna genereras i **`views/`**, med mallar i **`views/pages/`** och återanvändbara delar i **`views/partials/`** (header, navbar, footer), vilket minskar duplicering och gör globala ändringar enklare.
+
+Strukturellt följer projektet en **lättviktig MVC-arkitektur** (entry → routes → controllers → views), vilket gör koden ordnad och lätt att underhålla. Statiska resurser serveras från **`public/`** (CSS, JS, bilder och PDF), med skript som **`jquery.slides.js`** och **`main.js`** för interaktivitet på klientsidan och samlad styling i **`public/css`**. Det är ett standardiserat Express-projekt som är enkelt att driftsätta på valfri Node-hosting och tillräckligt modulärt för att växa genom att lägga till middleware (auth, uploads, logging) eller fler controllers utan att behöva strukturera om allt. Tekniker: **Node.js, Express, EJS, HTML/CSS/JavaScript, jQuery**.

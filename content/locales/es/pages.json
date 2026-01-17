@@ -1,0 +1,69 @@
+{
+  "about": {
+    "title": "Sobre mí",
+    "intro": "Soy desarrollador full-stack con una base sólida en IT y un enfoque práctico: me gusta entregar soluciones claras, mantenibles y con buen nivel de calidad.",
+    "paragraphs": [
+      "Finalicé el programa de desarrollador Full Stack (2023–2025), complementando la formación con proyectos reales publicados. A esta especialización sumo mis conocimientos tecnicos en la aplicación de la electrónica a sistemas embebidos, lo que me permite comprender el software desde su interacción directa con el hardware.",
+      "Cuento con una trayectoria iniciada en entornos de desarrollo clásicos, evolucionando y adaptándome continuamente desde los paradigmas de programación estructurada y procedimental hacia las arquitecturas modernas, escalables y orientadas a objetos.",
+      "Me interesa trabajar en equipos donde el código sea legible, se cuide la seguridad y se construyan productos que aporten valor. Valoro la comunicación, la disciplina y la mejora continua."
+    ],
+    "educationLabel": "Competencias:",
+    "educationCards": [
+      {
+        "id": "foretagsuniversitetet",
+        "title": "Desarrollador Full-Stack",
+        "institutionName": "Företagsuniversitetet",
+        "institutionLocation": "Estocolmo, Suecia",
+        "years": "2023 - 2025",
+        "competencies": [
+          "Trabajo ágil con Scrum",
+          "Introducción a IT",
+          "HTML5/CSS",
+          "JavaScript básico",
+          "Frameworks/librerías frontend (React, Angular)",
+          "JavaScript avanzado",
+          "Prácticas 1 (Desarrollador / Scrum Master)",
+          "Visión de negocio",
+          "Bases de datos",
+          "Desarrollo backend Node.js",
+          "Ciclo de vida seguro de aplicaciones",
+          "Desarrollo backend en Java"
+        ]
+      },
+      {
+        "id": "agstu",
+        "title": "Electrónica aplicada a sistemas embebidos",
+        "institutionName": "AGSTU AB - Arbete genom studier",
+        "institutionLocation": "Västerås, Suecia",
+        "years": "2017 - 2020",
+        "competencies": [
+          "Programación VHDL para sistemas embebidos",
+          "Programación en C de bajo nivel y arquitectura de microcomputadores",
+          "Diseño de sistemas con VHDL",
+          "Diseño avanzado de sistemas HW/SW",
+          "Metodología de diseño y documentación técnica"
+        ]
+      },
+      {
+        "id": "idat",
+        "title": "Ciencias de la computación",
+        "institutionName": "Instituto Superior Tecnologico IDAT",
+        "institutionLocation": "Lima, Peru",
+        "years": "1989 - 1994",
+        "competencies": [
+          "Programación y desarrollo de software",
+          "Análisis y diseño de sistemas",
+          "Redes e infraestructura"
+        ]
+      }
+    ],
+    "educationTitle": "Educación"
+  },
+  "contact": {
+    "title": "Hablemos",
+    "intro": "Estoy en busca de mi próximo desafío profesional. Si crees que mi perfil encaja con tu equipo o tienes un proyecto en mente, me encantaría escucharte."
+  }
+}
+
+
+

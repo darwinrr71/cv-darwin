@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "isag",
+    "title": "ISAG (LIA 2)",
+    "featured": true,
+    "oneLinerImpact": "Proyecto publicado que demuestra entrega de extremo a extremo (Recruiter Mode + Deep Dive).",
+    "description": "Proyecto web desarrollado durante LIA 2 con foco en estructura, claridad y mantenibilidad.",
+    "tags": ["Fullstack", "TypeScript", "DevOps", "Responsive"],
+    "stack": ["React", 
+    "Node.js", 
+    "PostgreSQL (Supabase)", 
+    "Prisma ORM", 
+    "TypeScript", 
+    "Vite", 
+    "Express", 
+    "Zod",
+    "Linux (Debian/Apache)"],
+    "links": {
+      "demo": "https://www.isag-home.cloud-ip.cc/",
+      "repo": "https://github.com/darwinrr71/Isag"
+    }
+  },
+  {
+    "slug": "incasale-dev",
+    "title": "Incasale (Frontend)",
+    "featured": true,
+    "oneLinerImpact": "React + Material UI desplegado en GitHub Pages: UI consistente y estructura clara.",
+    "description": "Frontend público centrado en componentes reutilizables y una experiencia de usuario pulida.",
+    "tags": ["Frontend", "React", "UI"],
+    "stack": ["React", "Vite", "Material UI"],
+    "links": {
+      "demo": "https://darwinrr71.github.io/incasale-dev/",
+      "repo": "https://github.com/darwinrr71/incasale-dev"
+    }
+  },
+  {
+    "slug": "incastad",
+    "title": "Incastad",
+    "featured": true,
+    "oneLinerImpact": "Sitio React + Material UI desplegado en GitHub Pages (gh-pages).",
+    "description": "Sitio de proyecto con React, Material UI y despliegue via gh-pages en GitHub.",
+    "tags": ["Fullstack", "Backend", "SSR", "Web Design"],
+    "stack": ["Node.js", "Express", "EJS", "jQuery", "HTML5", "CSS3"],
+    "links": {
+      "demo": "https://darwinrr71.github.io/incastad.github.io/",
+      "repo": "https://github.com/darwinrr71/incastad.github.io"
+    }
+  },
+  {
+    "slug": "electronics-embedded-systems",
+    "title": "Electrónica - Sistemas embebidos",
+    "featured": true,
+    "oneLinerImpact": "Diseño e implementación de sistemas embebidos mediante el diseño de hardware en VHDL y software en C. Integración de procesadores de soft-core Nios II sobre plataforma Altera DE10-Lite.",
+    "description": "Diseño e implementación de sistemas embebidos mediante el diseño de hardware en VHDL y software en C. Integración de procesadores de soft-core Nios II sobre plataforma Altera DE10-Lite.",
+    "tags": ["Embebidos", "VHDL", "C"],
+    "stack": ["VHDL", "C", "Nios II", "Altera DE10-Lite"]
+  }
+]

@@ -1,0 +1,10 @@
+---
+title: "Incastad"
+slug: "incastad"
+---
+
+## Overview
+
+This is a public website for a cleaning service, built with **Node.js + Express** and server-rendered using **EJS**. The application starts from **`index.js`**, where Express is initialized and routes are mounted. Navigation and logic are clearly separated: **`routes/`** defines the endpoints, and **`controller/uploadcontroller.js`** contains the specific logic (e.g., uploads). Pages are generated from **`views/`**, with templates in **`views/pages/`** and reusable partials in **`views/partials/`** (header, navbar, footer), which reduces duplication and makes global changes easier.
+
+Architecturally, it follows a **lightweight MVC approach** (entry → routes → controllers → views), keeping the code organized and easy to maintain. Static assets are served from **`public/`** (CSS, JS, images, and PDFs), including scripts like **`jquery.slides.js`** and **`main.js`** for client-side interactivity, with centralized styling in **`public/css`**. It’s a standard Express project that’s easy to deploy on any Node.js hosting and modular enough to scale by adding middleware (auth, uploads, logging) or more controllers without major restructuring. Technologies used: **Node.js, Express, EJS, HTML/CSS/JavaScript, jQuery**.

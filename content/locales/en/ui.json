@@ -1,0 +1,49 @@
+{
+  "nav": { "home": "Home", "projects": "Projects", "about": "About", "contact": "Contact" },
+  "actions": {
+    "downloadCv": "Download CV (PDF)",
+    "viewProjects": "View projects",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "copyEmail": "Copy email",
+    "copied": "Copied!",
+    "themeA": "Slate",
+    "themeB": "Warm"
+  },
+  "sections": {
+    "highlights": "Highlights",
+    "experience": "Experience",
+    "featuredProjects": "Featured projects",
+    "skills": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "searchPlaceholder": "Search projects…",
+    "viewCaseStudy": "Case study",
+    "repo": "Repository",
+    "liveDemo": "Live demo"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "If you'd like to talk, send me a message and we'll coordinate.",
+    "form": {
+      "fields": {
+        "name": "Full Name",
+        "email": "Email",
+        "subject": "Subject / Reason for Contact",
+        "message": "Message"
+      },
+      "submit": "Send Message",
+      "helper": "I respond within 24 hours",
+      "success": "Thank you! We received your message and will reply soon.",
+      "error": "Something went wrong. Please try again.",
+      "rateLimited": "Too many messages. Please try again later.",
+      "defaultSubject": "Contact form message",
+      "validation": {
+        "required": "This field is required.",
+        "invalidEmail": "Enter a valid email address.",
+        "maxLength": "Too long. Please shorten your message."
+      }
+    }
+  }
+}
