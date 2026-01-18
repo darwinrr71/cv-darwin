@@ -361,7 +361,7 @@ export function NavbarClient({
                   asChild
                   variant="ghost"
                   size="sm"
-                  className="nav-link group relative text-muted-foreground transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/60 hover:text-foreground focus-visible:ring-ring/50"
+                  className="nav-link group text-lg relative text-muted-foreground transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/60 hover:text-foreground focus-visible:ring-ring/50"
                 >
                   <Link href={item.href}>
                     <span className="font-semibold transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none group-hover:-translate-y-0.5">
@@ -373,7 +373,7 @@ export function NavbarClient({
                         isDesktopActive(item.href)
                           ? "scale-x-100 opacity-100"
                           : "scale-x-0 opacity-0",
-                        "group-hover:scale-x-100 group-hover:opacity-70"
+                        "group-hover:scale-x-100 group-hover:opacity-70",
                       )}
                     />
                   </Link>
@@ -423,7 +423,7 @@ export function NavbarClient({
                     className={cn(
                       "drawer-link flex w-full items-center rounded-md border-l-2 border-transparent px-4 py-3 text-left text-base font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 active:border-primary/50 active:bg-muted/40",
                       isActive &&
-                        "drawer-link-active bg-muted/40 font-semibold text-foreground border-primary/70"
+                        "drawer-link-active bg-muted/40 font-semibold text-foreground border-primary/70",
                     )}
                   >
                     {item.label}
