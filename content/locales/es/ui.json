@@ -35,7 +35,7 @@
       },
       "submit": "Enviar mensaje",
       "helper": "Respondo en 24 horas",
-      "success": "¡Gracias! Recibimos tu mensaje y responderemos pronto.",
+      "success": "¡Gracias! Recibi tu mensaje y responderé pronto.",
       "error": "Algo salió mal. Inténtalo de nuevo.",
       "rateLimited": "Demasiados mensajes. Inténtalo más tarde.",
       "defaultSubject": "Mensaje del formulario de contacto",

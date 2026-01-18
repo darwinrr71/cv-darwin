@@ -35,7 +35,7 @@
       },
       "submit": "Skicka meddelande",
       "helper": "Jag svarar inom 24 timmar",
-      "success": "Tack! Vi har tagit emot ditt meddelande och svarar snart.",
+      "success": "Tack! Jag har tagit emot ditt meddelande och svarar snart.",
       "error": "Något gick fel. Försök igen.",
       "rateLimited": "För många meddelanden. Försök igen senare.",
       "defaultSubject": "Kontaktformulär",

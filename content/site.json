@@ -5,15 +5,15 @@
   "defaultLocale": "sv",
   "seo": {
     "es": {
-      "title": "Darwin Rengifo — Full-Stack Developer (React/Next.js · Node.js)",
+      "title": "Darwin — Full-Stack Developer (React/Next.js · Node.js)",
       "description": "Portafolio y CV: proyectos full-stack, experiencia y contacto. Enfoque en calidad, seguridad y mantenibilidad."
     },
     "en": {
-      "title": "Darwin Rengifo — Full-Stack Developer (React/Next.js · Node.js)",
+      "title": "Darwin — Full-Stack Developer (React/Next.js · Node.js)",
       "description": "Portfolio and CV: full-stack projects, experience and contact. Focus on quality, security and maintainability."
     },
     "sv": {
-      "title": "Darwin Rengifo — Fullstackutvecklare (React/Next.js · Node.js)",
+      "title": "Darwin — Fullstackutvecklare (React/Next.js · Node.js)",
       "description": "Portfolio och CV: fullstackprojekt, erfarenhet och kontakt. Fokus på kvalitet, säkerhet och underhållbarhet."
     }
   },

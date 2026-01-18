@@ -65,9 +65,7 @@ const MAX_LENGTHS = {
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-function mergeStrings(
-  overrides?: ContactFormStringsInput,
-): ContactFormStrings {
+function mergeStrings(overrides?: ContactFormStringsInput): ContactFormStrings {
   return {
     ...defaultStrings,
     ...overrides,
@@ -95,7 +93,9 @@ export function ContactForm({ strings }: ContactFormProps) {
     {},
   );
   const [formError, setFormError] = React.useState<string | null>(null);
-  const [successMessage, setSuccessMessage] = React.useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = React.useState<string | null>(
+    null,
+  );
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const handleChange =
@@ -221,6 +221,7 @@ export function ContactForm({ strings }: ContactFormProps) {
             className="text-sm font-medium text-foreground"
           >
             {s.fields.name}
+            <span className="text-red-500 ml-1">*</span>
           </label>
           <Input
             id="contact-name"
@@ -231,7 +232,9 @@ export function ContactForm({ strings }: ContactFormProps) {
             value={values.name}
             onChange={handleChange("name")}
             aria-invalid={Boolean(fieldErrors.name)}
-            aria-describedby={fieldErrors.name ? "contact-name-error" : undefined}
+            aria-describedby={
+              fieldErrors.name ? "contact-name-error" : undefined
+            }
           />
           {fieldErrors.name ? (
             <p
@@ -249,6 +252,7 @@ export function ContactForm({ strings }: ContactFormProps) {
             className="text-sm font-medium text-foreground"
           >
             {s.fields.email}
+            <span className="text-red-500 ml-1">*</span>
           </label>
           <Input
             id="contact-email"
@@ -308,6 +312,7 @@ export function ContactForm({ strings }: ContactFormProps) {
             className="text-sm font-medium text-foreground"
           >
             {s.fields.message}
+            <span className="text-red-500 ml-1">*</span>
           </label>
           <textarea
             id="contact-message"
