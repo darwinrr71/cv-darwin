@@ -85,7 +85,7 @@ export async function ContactActions({
         {wrapAction(node)}
         <span
           role="tooltip"
-          className="pointer-events-none absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 shadow-md transition-all group-hover:opacity-100 group-hover:translate-y-[-110%] group-focus-within:opacity-100 group-focus-within:translate-y-[-110%]"
+          className="pointer-events-none absolute left-1/2 bottom-0 z-10 -translate-x-1/2 translate-y-full whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-xs text-card-foreground opacity-0 shadow-md transition-all group-hover:opacity-100 group-hover:translate-y-[110%] group-focus-within:opacity-100 group-focus-within:translate-y-[110%]"
         >
           {label}
         </span>

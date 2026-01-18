@@ -9,6 +9,7 @@ type NavbarProps = {
 type UiContent = {
   nav: {
     home: string;
+    homeTooltip?: string;
     projects: string;
     about: string;
     contact: string;

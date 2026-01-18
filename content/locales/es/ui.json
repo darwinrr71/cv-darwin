@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Inicio", "projects": "Proyectos", "about": "Sobre mi", "contact": "Contacto" },
+  "nav": { "home": "Inicio", "homeTooltip": "Ir al inicio", "projects": "Proyectos", "about": "Sobre mi", "contact": "Contacto" },
   "actions": {
     "downloadCv": "Descargar CV (PDF)",
     "viewProjects": "Ver proyectos",

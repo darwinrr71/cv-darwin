@@ -61,6 +61,10 @@ export async function generateMetadata({
     metadataBase,
     title,
     description,
+    icons: [
+      { rel: "icon", url: "/favicon.ico", sizes: "any" },
+      { rel: "icon", url: "/favicon.svg", type: "image/svg+xml" },
+    ],
     alternates: {
       canonical,
     },

@@ -22,6 +22,7 @@ type NavbarClientProps = {
   ui: {
     nav: {
       home: string;
+      homeTooltip?: string;
       projects: string;
       about: string;
       contact: string;
@@ -112,6 +113,17 @@ export function NavbarClient({
   const themeA = ui.actions?.themeA ?? "Slate";
   const themeB = ui.actions?.themeB ?? "Warm";
   const brandLabel = site.siteName ?? ui.nav.home;
+  const homeTooltip = ui.nav.homeTooltip ?? ui.nav.home;
+  const brandText = (
+    <span className="inline-flex items-center">
+      <span className="font-semibold">D</span>
+      <span className="-ml-1.5 md:-ml-2 font-medium opacity-90">R</span>
+    </span>
+  );
+  const brandClassName =
+    "brand-mark -my-1 md:my-0 text-3xl font-semibold leading-[0.95] tracking-[-0.04em] text-current opacity-90 md:text-4xl md:-ml-3";
+  const brandDesktopClassName = `${brandClassName} absolute left-14 top-1/2 -translate-y-[55%] hidden md:inline-flex md:items-center`;
+  const brandMobileClassName = `${brandClassName} inline-flex items-center`;
 
   React.useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -326,13 +338,31 @@ export function NavbarClient({
         className="site-navbar mobile-navbar fixed top-0 left-0 right-0 z-50 border-b border-border bg-card/80 backdrop-blur"
         style={headerStyle}
       >
+        <Link
+          href={`/${locale}`}
+          className={brandDesktopClassName}
+          aria-label={brandLabel}
+        >
+          <div className="group relative">
+            {brandText}
+            <span className="sr-only">{brandLabel}</span>
+            <span
+              role="tooltip"
+              className="pointer-events-none absolute left-1/2 bottom-0 z-10 -translate-x-1/2 translate-y-full whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-xs font-normal leading-normal tracking-normal text-card-foreground opacity-0 shadow-md transition-all group-hover:opacity-100 group-hover:translate-y-[110%] group-focus-within:opacity-100 group-focus-within:translate-y-[110%]"
+            >
+              {homeTooltip}
+            </span>
+          </div>
+        </Link>
         <div className="mx-auto w-full max-w-5xl">
           <div className="flex items-center justify-between gap-3 px-4 py-3 md:hidden">
             <Link
               href={`/${locale}`}
-              className="max-w-44 truncate text-sm font-semibold"
+              className={brandMobileClassName}
+              aria-label={brandLabel}
             >
-              {brandLabel}
+              <span className="sr-only">{brandLabel}</span>
+              {brandText}
             </Link>
             <div className="flex items-center gap-2">
               <ThemeToggle themeA={themeA} themeB={themeB} />
@@ -350,7 +380,7 @@ export function NavbarClient({
             </div>
           </div>
 
-          <div className="hidden items-center justify-between gap-4 px-6 py-4 md:flex">
+          <div className="relative hidden items-center justify-between gap-4 px-6 py-4 md:flex">
             <nav
               className="flex flex-wrap items-center gap-1"
               aria-label="Primary"
@@ -439,3 +469,4 @@ export function NavbarClient({
     </Sheet>
   );
 }
+
