@@ -380,9 +380,9 @@ export function NavbarClient({
             </div>
           </div>
 
-          <div className="relative hidden items-center justify-between gap-4 px-6 py-4 md:flex">
+          <div className="relative hidden items-stretch justify-between gap-4 px-6 py-0 md:flex">
             <nav
-              className="flex flex-wrap items-center gap-1"
+              className="flex flex-wrap items-stretch gap-2"
               aria-label="Primary"
             >
               {items.map((item) => (
@@ -391,15 +391,15 @@ export function NavbarClient({
                   asChild
                   variant="ghost"
                   size="sm"
-                  className="nav-link group text-lg relative text-muted-foreground transition-colors duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/60 hover:text-foreground focus-visible:ring-ring/50"
+                  className="nav-link group relative h-full rounded-none px-4 py-5 text-lg text-muted-foreground transition-colors duration-240 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/50 hover:text-foreground focus-visible:ring-ring/50"
                 >
                   <Link href={item.href}>
-                    <span className="font-semibold transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none group-hover:-translate-y-0.5">
+                    <span className="font-medium tracking-tight transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none group-hover:-translate-y-[0.5px]">
                       {item.label}
                     </span>
                     <span
                       className={cn(
-                        "pointer-events-none absolute left-3 right-3 -bottom-1 h-0.5 rounded-full bg-primary/70 transition-[transform,opacity] duration-240 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left",
+                        "pointer-events-none absolute left-3 right-3 bottom-3 h-[3px] rounded-full bg-gradient-to-r from-current/70 to-current transition-[transform,opacity] duration-240 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left",
                         isDesktopActive(item.href)
                           ? "scale-x-100 opacity-100"
                           : "scale-x-0 opacity-0",
@@ -469,4 +469,3 @@ export function NavbarClient({
     </Sheet>
   );
 }
-

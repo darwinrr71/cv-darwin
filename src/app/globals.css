@@ -290,4 +290,8 @@ html.dark.theme-warm {
   html.theme-slate .contact-footer .contact-footer-btn:focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
+
+  html.theme-warm .site-navbar .nav-link:hover {
+    @apply bg-secondary/70!;
+  }
 }
