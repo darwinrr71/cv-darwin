@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { getProfile, getSite, getUi } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { SheetClose } from "@/components/ui/sheet";
+import { TooltipLabel } from "@/components/ui/TooltipLabel";
 import { EmailActionButton } from "@/components/contact/EmailActionButton";
 import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
@@ -18,6 +19,7 @@ type ContactActionsProps = {
   closeOnAction?: boolean;
   iconOnly?: boolean;
   actions?: ContactAction[];
+  navStyle?: boolean;
 };
 
 type UiContent = {
@@ -56,6 +58,7 @@ export async function ContactActions({
   closeOnAction = false,
   iconOnly = false,
   actions,
+  navStyle,
 }: ContactActionsProps) {
   const ui = (await getUi(locale)) as UiContent;
   const profile = (await getProfile(locale)) as ProfileContent;
@@ -70,7 +73,16 @@ export async function ContactActions({
     subject: "Contacto - Darwin Rengifo",
     body: "Hola Darwin,\r\n\r\nQuisiera conversar sobre...",
   };
-  const actionClassName = [useNavAction ? "nav-action" : null, buttonClassName]
+  const navStyleEnabled = navStyle ?? (compact && useNavAction && !iconOnly);
+  const navLinkClassName =
+    "nav-link group relative h-full rounded-none bg-transparent border-transparent shadow-none px-4 py-5 text-sm text-muted-foreground transition-colors duration-240 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/50 hover:text-foreground focus-visible:ring-ring/50";
+  const actionClassName = [
+    navStyleEnabled ? navLinkClassName : null,
+    !navStyleEnabled && useNavAction ? "nav-action" : null,
+    !navStyleEnabled ? "group relative" : null,
+    "font-normal",
+    buttonClassName,
+  ]
     .filter(Boolean)
     .join(" ");
   const wrapAction = (node: ReactNode) =>
@@ -81,25 +93,29 @@ export async function ContactActions({
     }
 
     return (
-      <div className="group relative">
+      <TooltipLabel label={label}>
         {wrapAction(node)}
-        <span
-          role="tooltip"
-          className="pointer-events-none absolute left-1/2 bottom-0 z-10 -translate-x-1/2 translate-y-full whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-xs text-card-foreground opacity-0 shadow-md transition-all group-hover:opacity-100 group-hover:translate-y-[110%] group-focus-within:opacity-100 group-focus-within:translate-y-[110%]"
-        >
-          {label}
-        </span>
-      </div>
+      </TooltipLabel>
     );
   };
 
   const showAction = (action: ContactAction) => visibleActions.includes(action);
+  const showHover = navStyleEnabled;
+  const labelTextClassName = [
+    "font-normal",
+    showHover
+      ? "transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none group-hover:-translate-y-[0.5px]"
+      : null,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const layoutClassName = navStyleEnabled
+    ? "flex flex-wrap items-stretch gap-2"
+    : "flex flex-wrap items-center gap-2";
 
   return (
     <div
-      className={["flex flex-wrap items-center gap-2", actionsClassName]
-        .filter(Boolean)
-        .join(" ")}
+      className={[layoutClassName, actionsClassName].filter(Boolean).join(" ")}
     >
       {showAction("email")
         ? withTooltip(
@@ -109,6 +125,8 @@ export async function ContactActions({
               aria-label={ui.actions.email}
               className={actionClassName}
               label={ui.actions.email}
+              labelClassName={labelTextClassName}
+              showHoverDecoration={false}
               draft={emailDraft}
               icon={<Mail className="size-4" aria-hidden="true" />}
             />,
@@ -127,7 +145,9 @@ export async function ContactActions({
               <a href={profile.links.linkedin} target="_blank" rel="noreferrer">
                 <span className="inline-flex items-center gap-2">
                   <LinkedinIcon className="size-4" />
-                  <span>{ui.actions.linkedin}</span>
+                  <span className={labelTextClassName}>
+                    {ui.actions.linkedin}
+                  </span>
                 </span>
               </a>
             </Button>,
@@ -146,7 +166,7 @@ export async function ContactActions({
               <a href={githubHref} target="_blank" rel="noreferrer">
                 <span className="inline-flex items-center gap-2">
                   <GithubIcon className="size-4" />
-                  <span>{githubLabel}</span>
+                  <span className={labelTextClassName}>{githubLabel}</span>
                 </span>
               </a>
             </Button>,

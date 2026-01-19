@@ -33,7 +33,7 @@ export async function Navbar({ locale }: NavbarProps) {
       locale={locale}
       ui={ui}
       site={site}
-      desktopContactActions={<ContactActions locale={locale} compact />}
+      desktopContactActions={<ContactActions locale={locale} compact navStyle />}
       mobileContactActions={
         <ContactActions
           locale={locale}

@@ -34,6 +34,7 @@ const localeOptions = locales.map((locale) => ({
 
 type LanguageSwitcherProps = {
   currentLocale: string;
+  navStyle?: boolean;
 };
 
 function buildLocalePath(pathname: string, locale: string) {
@@ -47,7 +48,7 @@ function buildLocalePath(pathname: string, locale: string) {
   return nextPath.startsWith("/") ? nextPath : `/${nextPath}`;
 }
 
-export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ currentLocale, navStyle }: LanguageSwitcherProps) {
   const pathname = usePathname() ?? `/${currentLocale}`;
   const searchParams = useSearchParams();
   const query = searchParams?.toString();
@@ -58,18 +59,34 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
     localeOptions.find((option) => option.value === activeValue) ?? null;
   const label =
     activeOption?.value?.toUpperCase() ?? currentLocale.toUpperCase();
+  const labelClassName = [
+    "font-normal",
+    navStyle
+      ? "transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none group-hover:-translate-y-[0.5px]"
+      : null,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const navClassName =
+    "nav-link group relative h-full rounded-none bg-transparent border-transparent shadow-none px-4 py-5 text-sm font-normal text-muted-foreground transition-colors duration-240 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/50 hover:text-foreground focus-visible:ring-ring/50";
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="outline"
+          variant={navStyle ? "ghost" : "outline"}
           size="sm"
           aria-label="Select language"
-          className="nav-action flex items-center gap-2 brightness-80 hover:brightness-100"
+          className={
+            navStyle
+              ? `${navClassName} flex items-center gap-2 brightness-80 hover:brightness-100`
+              : "nav-action group relative flex items-center gap-2 font-normal brightness-80 hover:brightness-100"
+          }
         >
           <Globe className="size-4" aria-hidden />
-          <span className="text-sm font-medium">{label}</span>
+          <span className="text-sm">
+            <span className={labelClassName}>{label}</span>
+          </span>
           <ChevronDown className="size-3 opacity-70" aria-hidden />
         </Button>
       </DropdownMenuTrigger>

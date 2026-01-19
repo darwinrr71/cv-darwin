@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { TooltipLabel } from "@/components/ui/TooltipLabel";
 import {
   Sheet,
   SheetClose,
@@ -343,16 +344,13 @@ export function NavbarClient({
           className={brandDesktopClassName}
           aria-label={brandLabel}
         >
-          <div className="group relative">
+          <TooltipLabel
+            label={homeTooltip}
+            className="font-normal leading-normal tracking-normal"
+          >
             {brandText}
             <span className="sr-only">{brandLabel}</span>
-            <span
-              role="tooltip"
-              className="pointer-events-none absolute left-1/2 bottom-0 z-10 -translate-x-1/2 translate-y-full whitespace-nowrap rounded-md border border-border bg-card px-2 py-1 text-xs font-normal leading-normal tracking-normal text-card-foreground opacity-0 shadow-md transition-all group-hover:opacity-100 group-hover:translate-y-[110%] group-focus-within:opacity-100 group-focus-within:translate-y-[110%]"
-            >
-              {homeTooltip}
-            </span>
-          </div>
+          </TooltipLabel>
         </Link>
         <div className="mx-auto w-full max-w-5xl">
           <div className="flex items-center justify-between gap-3 px-4 py-3 md:hidden">
@@ -410,10 +408,10 @@ export function NavbarClient({
                 </Button>
               ))}
             </nav>
-            <div className="flex items-center gap-2">
+            <div className="flex items-stretch gap-2 pl-6 ml-6">
               {desktopContactActions}
-              <ThemeToggle themeA={themeA} themeB={themeB} />
-              <LanguageSwitcher currentLocale={locale} />
+              <ThemeToggle themeA={themeA} themeB={themeB} navStyle />
+              <LanguageSwitcher currentLocale={locale} navStyle />
             </div>
           </div>
         </div>
