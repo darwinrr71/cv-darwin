@@ -225,14 +225,38 @@ html.dark.theme-warm {
     @apply bg-white/10 border border-white/20 hover:bg-white/15;
   }
 
-  html.theme-slate .site-navbar .nav-link {
-    @apply rounded-md px-2 py-1 transition-colors;
+  .site-navbar {
+    --nav-hover-bg: hsl(var(--muted) / 0.5);
+  }
 
-    @apply text-primary-foreground/90! hover:bg-white/10! hover:text-primary-foreground!;
+  .site-navbar .nav-link,
+  .site-navbar .nav-action {
+    background-image: linear-gradient(to right, var(--nav-hover-bg), var(--nav-hover-bg));
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition:
+      background-size 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-navbar .nav-link:hover,
+  .site-navbar .nav-link:focus-visible,
+  .site-navbar .nav-link[data-active="true"],
+  .site-navbar .nav-action:hover,
+  .site-navbar .nav-action:focus-visible {
+    background-size: 100% 100%;
+  }
+
+  html.theme-slate .site-navbar .nav-link {
+    @apply rounded-md px-2 py-1;
+
+    @apply text-primary-foreground/90! hover:text-primary-foreground!;
   }
 
   html.theme-slate .site-navbar .nav-action {
-    @apply rounded-full border! border-white/20! bg-white/10! text-primary-foreground! hover:bg-white/15! focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none;
+    @apply rounded-full border! border-white/20! bg-white/10! text-primary-foreground! focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:outline-none;
   }
 
   html.theme-slate .mobile-drawer-header {
@@ -291,7 +315,11 @@ html.dark.theme-warm {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 
-  html.theme-warm .site-navbar .nav-link:hover {
-    @apply bg-secondary/70!;
+  html.theme-slate .site-navbar {
+    --nav-hover-bg: hsl(0 0% 100% / 0.15);
+  }
+
+  html.theme-warm .site-navbar {
+    --nav-hover-bg: hsl(var(--secondary) / 0.7);
   }
 }

@@ -2,6 +2,7 @@ import { assertLocale } from "@/lib/i18n";
 import { getPages, getUi } from "@/lib/content";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageReveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 
 type PageProps = {
   params: Promise<{ locale: string }> | { locale: string };
@@ -41,20 +42,28 @@ export default async function ContactPage({ params }: PageProps) {
   };
 
   return (
-    <section className="space-y-6">
-      <h1 className="text-3xl font-semibold text-foreground">
-        {pages.contact?.title ?? ui.contact?.title ?? "Contact"}
-      </h1>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base text-foreground">
-            {pages.contact?.intro ?? ui.contact?.subtitle ?? ""}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ContactForm strings={ui.contact?.form} />
-        </CardContent>
-      </Card>
-    </section>
+    <PageReveal>
+      <section className="space-y-6">
+        <Stagger className="space-y-6">
+          <StaggerItem>
+            <h1 className="text-3xl font-semibold text-foreground">
+              {pages.contact?.title ?? ui.contact?.title ?? "Contact"}
+            </h1>
+          </StaggerItem>
+          <StaggerItem>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base text-foreground">
+                  {pages.contact?.intro ?? ui.contact?.subtitle ?? ""}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ContactForm strings={ui.contact?.form} />
+              </CardContent>
+            </Card>
+          </StaggerItem>
+        </Stagger>
+      </section>
+    </PageReveal>
   );
 }

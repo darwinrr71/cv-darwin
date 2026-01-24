@@ -24,7 +24,7 @@ export function ThemeToggle({ themeA, themeB, navStyle }: ThemeToggleProps) {
     .filter(Boolean)
     .join(" ");
   const navClassName =
-    "nav-link group relative h-full rounded-none bg-transparent border-transparent shadow-none px-4 py-5 text-sm font-normal text-muted-foreground transition-colors duration-240 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/50 hover:text-foreground focus-visible:ring-ring/50";
+    "nav-link group relative h-full rounded-none bg-transparent border-transparent shadow-none px-4 py-5 text-sm font-normal text-muted-foreground hover:bg-transparent hover:text-foreground focus-visible:ring-ring/50";
 
   return (
     <Button

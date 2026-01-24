@@ -75,7 +75,7 @@ export async function ContactActions({
   };
   const navStyleEnabled = navStyle ?? (compact && useNavAction && !iconOnly);
   const navLinkClassName =
-    "nav-link group relative h-full rounded-none bg-transparent border-transparent shadow-none px-4 py-5 text-sm text-muted-foreground transition-colors duration-240 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted/50 hover:text-foreground focus-visible:ring-ring/50";
+    "nav-link group relative h-full rounded-none bg-transparent border-transparent shadow-none px-4 py-5 text-sm text-muted-foreground hover:bg-transparent hover:text-foreground focus-visible:ring-ring/50";
   const actionClassName = [
     navStyleEnabled ? navLinkClassName : null,
     !navStyleEnabled && useNavAction ? "nav-action" : null,

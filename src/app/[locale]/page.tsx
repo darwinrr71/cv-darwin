@@ -13,6 +13,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  PageReveal,
+  Stagger,
+  StaggerItem,
+} from "@/components/motion/Reveal";
 
 type PageProps = {
   params: { locale: string } | Promise<{ locale: string }>;
@@ -85,149 +90,168 @@ export default async function HomePage({ params }: PageProps) {
   const secondaryCta = profileContent.cta?.secondary;
 
   return (
-    <div className="space-y-12">
-      <section className="space-y-6">
-        <p className="text-sm font-medium uppercase tracking-wide text-primary/80">
-          Recruiter mode
-        </p>
-        <div className="space-y-3">
-          <h1 className="text-3xl font-semibold text-foreground">
-            {profileContent.name}
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            {profileContent.role}
-          </p>
-          <p className="text-sm text-muted-foreground">
-            {profileContent.location}
-          </p>
-        </div>
-        <div className="space-y-3 text-base leading-7 text-muted-foreground">
-          <p>{profileContent.headline}</p>
-          <p>{profileContent.summary}</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <Button asChild>
-            <Link href={`/${p.locale}/projects`}>
-              {profileContent.cta?.primary?.label ?? uiContent.actions.viewProjects}
-            </Link>
-          </Button>
-          {secondaryCta?.href ? (
-            <Button asChild variant="outline">
-              <a
-                href={secondaryCta.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center gap-2"
-              >
-                <Download className="h-4 w-4" aria-hidden="true" />
-                {secondaryCta.label ?? uiContent.actions.downloadCv}
-              </a>
-            </Button>
-          ) : null}
-          <ContactActions locale={p.locale} />
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">
-          {uiContent.sections.highlights}
-        </h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {profileContent.highlights?.slice(0, 3).map((item) => (
-            <Card key={item.title}>
-              <CardHeader>
-                <CardTitle className="text-base">{item.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {item.text}
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">
-          {uiContent.sections.experience}
-        </h2>
-        <div className="space-y-3">
-          {profileContent.experience?.map((role) => (
-            <div
-              key={`${role.company}-${role.title}`}
-              className="flex flex-col gap-1 rounded-lg border border-border bg-card px-4 py-3 text-card-foreground shadow-[0_1px_2px_rgba(0,0,0,0.10)] transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
-            >
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="font-medium text-foreground">
-                  {role.title}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {role.start} - {role.end}
-                </p>
-              </div>
+    <PageReveal>
+      <Stagger className="space-y-12">
+        <StaggerItem>
+          <section className="space-y-6">
+            <p className="text-sm font-medium uppercase tracking-wide text-primary/80">
+              Recruiter mode
+            </p>
+            <div className="space-y-3">
+              <h1 className="text-3xl font-semibold text-foreground">
+                {profileContent.name}
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                {profileContent.role}
+              </p>
               <p className="text-sm text-muted-foreground">
-                {role.company}
-                {role.location ? ` • ${role.location}` : ""}
+                {profileContent.location}
               </p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-xl font-semibold text-foreground">
-            {uiContent.sections.featuredProjects}
-          </h2>
-          <Button asChild variant="ghost" size="sm">
-            <Link href={`/${p.locale}/projects`}>
-              {uiContent.actions.viewProjects}
-            </Link>
-          </Button>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <Card key={project.slug} className="ring-1 ring-primary/40">
-              <CardHeader>
-                <CardTitle className="text-base">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {project.oneLinerImpact ?? project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground">
-                <div className="flex flex-wrap gap-2">
-                  {(project.tags ?? []).map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <Button
-                  asChild
-                  size="sm"
-                  className="bg-primary text-primary-foreground hover:bg-accent"
-                >
-                  <Link href={`/${p.locale}/projects/${project.slug}`}>
-                    {uiContent.projects?.viewCaseStudy ?? "View case"}
-                  </Link>
+            <div className="space-y-3 text-base leading-7 text-muted-foreground">
+              <p>{profileContent.headline}</p>
+              <p>{profileContent.summary}</p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <Button asChild>
+                <Link href={`/${p.locale}/projects`}>
+                  {profileContent.cta?.primary?.label ??
+                    uiContent.actions.viewProjects}
+                </Link>
+              </Button>
+              {secondaryCta?.href ? (
+                <Button asChild variant="outline">
+                  <a
+                    href={secondaryCta.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-2"
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    {secondaryCta.label ?? uiContent.actions.downloadCv}
+                  </a>
                 </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+              ) : null}
+              <ContactActions locale={p.locale} />
+            </div>
+          </section>
+        </StaggerItem>
 
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">
-          {uiContent.sections.skills}
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <Badge key={skill} variant="outline">
-              {skill}
-            </Badge>
-          ))}
-        </div>
-      </section>
-    </div>
+        <StaggerItem>
+          <section className="space-y-4">
+            <h2 className="text-xl font-semibold text-foreground">
+              {uiContent.sections.highlights}
+            </h2>
+            <Stagger className="grid gap-4 md:grid-cols-3" stagger={0.05}>
+              {profileContent.highlights?.slice(0, 3).map((item) => (
+                <StaggerItem key={item.title} className="h-full">
+                  <Card className="h-full">
+                    <CardHeader>
+                      <CardTitle className="text-base">{item.title}</CardTitle>
+                      <CardDescription className="text-muted-foreground">
+                        {item.text}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </section>
+        </StaggerItem>
+
+        <StaggerItem>
+          <section className="space-y-4">
+            <h2 className="text-xl font-semibold text-foreground">
+              {uiContent.sections.experience}
+            </h2>
+            <Stagger className="space-y-3" stagger={0.05}>
+              {profileContent.experience?.map((role) => (
+                <StaggerItem key={`${role.company}-${role.title}`}>
+                  <div className="flex flex-col gap-1 rounded-lg border border-border bg-card px-4 py-3 text-card-foreground shadow-[0_1px_2px_rgba(0,0,0,0.10)] transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <p className="font-medium text-foreground">
+                        {role.title}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {role.start} - {role.end}
+                      </p>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {role.company}
+                      {role.location ? ` • ${role.location}` : ""}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </section>
+        </StaggerItem>
+
+        <StaggerItem>
+          <section className="space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h2 className="text-xl font-semibold text-foreground">
+                {uiContent.sections.featuredProjects}
+              </h2>
+              <Button asChild variant="ghost" size="sm">
+                <Link href={`/${p.locale}/projects`}>
+                  {uiContent.actions.viewProjects}
+                </Link>
+              </Button>
+            </div>
+            <Stagger className="grid gap-4 md:grid-cols-3" stagger={0.05}>
+              {featuredProjects.map((project) => (
+                <StaggerItem key={project.slug} className="h-full">
+                  <Card className="h-full ring-1 ring-primary/40 flex flex-col">
+                    <CardHeader>
+                      <CardTitle className="text-base">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-muted-foreground">
+                        {project.oneLinerImpact ?? project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-3 text-sm text-muted-foreground flex-1">
+                      <div className="flex flex-wrap gap-2">
+                        {(project.tags ?? []).map((tag) => (
+                          <Badge key={tag} variant="secondary">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-primary text-primary-foreground hover:bg-accent"
+                      >
+                        <Link href={`/${p.locale}/projects/${project.slug}`}>
+                          {uiContent.projects?.viewCaseStudy ?? "View case"}
+                        </Link>
+                      </Button>
+                    </CardContent>
+                    <div className="pt-4" />
+                  </Card>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </section>
+        </StaggerItem>
+
+        <StaggerItem>
+          <section className="space-y-4">
+            <h2 className="text-xl font-semibold text-foreground">
+              {uiContent.sections.skills}
+            </h2>
+            <Stagger className="flex flex-wrap gap-2" stagger={0.04}>
+              {skills.map((skill) => (
+                <StaggerItem key={skill}>
+                  <Badge variant="outline">{skill}</Badge>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </section>
+        </StaggerItem>
+      </Stagger>
+    </PageReveal>
   );
 }

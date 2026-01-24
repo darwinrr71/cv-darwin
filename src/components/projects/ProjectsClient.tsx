@@ -14,6 +14,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import {
+  PageReveal,
+  Reveal,
+} from "@/components/motion/Reveal";
 
 type ProjectSummary = {
   slug: string;
@@ -87,110 +91,126 @@ export function ProjectsClient({ locale, projects, ui }: ProjectsClientProps) {
   }, [projectList, query, selectedTag]);
 
   return (
-    <section className="space-y-8">
-      <div className="space-y-3">
-        <h1 className="text-3xl font-semibold text-foreground">
-          {uiContent.projects?.title ?? "Projects"}
-        </h1>
+    <PageReveal>
+      <section className="space-y-8">
+        <Reveal>
+          <h1 className="text-3xl font-semibold text-foreground">
+            {uiContent.projects?.title ?? "Projects"}
+          </h1>
+        </Reveal>
 
-        <div
-          className="flex flex-col gap-4
+        <Reveal delay={0.08}>
+          <div
+            className="flex flex-col gap-4
          md:flex-row md:items-center"
-        >
-          <div className="w-full md:max-w-md">
-            <Input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder={
-                uiContent.projects?.searchPlaceholder ?? "Search projects"
-              }
-              aria-label={
-                uiContent.projects?.searchPlaceholder ?? "Search projects"
-              }
-            />
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Badge asChild variant={selectedTag ? "outline" : "default"}>
-              <button type="button" onClick={() => setSelectedTag(null)}>
-                All
-              </button>
-            </Badge>
-            {allTags.map((tag) => (
-              <Badge
-                key={tag}
-                asChild
-                variant={selectedTag === tag ? "default" : "outline"}
-              >
-                <button type="button" onClick={() => setSelectedTag(tag)}>
-                  {tag}
+          >
+            <div className="w-full md:max-w-md">
+              <Input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={
+                  uiContent.projects?.searchPlaceholder ?? "Search projects"
+                }
+                aria-label={
+                  uiContent.projects?.searchPlaceholder ?? "Search projects"
+                }
+              />
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Badge asChild variant={selectedTag ? "outline" : "default"}>
+                <button type="button" onClick={() => setSelectedTag(null)}>
+                  All
                 </button>
               </Badge>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        {filteredProjects.map((project) => (
-          <Card key={project.slug} className="ring-1 ring-primary/40">
-            <CardHeader>
-              <CardTitle className="text-lg">{project.title}</CardTitle>
-              <CardDescription className="text-muted-foreground">
-                {project.oneLinerImpact ?? project.description}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex flex-wrap gap-2">
-                {(project.tags ?? []).map((tag) => (
-                  <Badge key={tag} variant="secondary">
+              {allTags.map((tag) => (
+                <Badge
+                  key={tag}
+                  asChild
+                  variant={selectedTag === tag ? "default" : "outline"}
+                >
+                  <button type="button" onClick={() => setSelectedTag(tag)}>
                     {tag}
-                  </Badge>
-                ))}
-              </div>
-              {project.stack?.length ? (
-                <div className="flex flex-wrap gap-2">
-                  {project.stack.map((item) => (
-                    <Badge key={item} variant="outline">
-                      {item}
-                    </Badge>
-                  ))}
-                </div>
-              ) : null}
-            </CardContent>
-            <CardFooter className="flex flex-wrap gap-2">
-              <Button
-                asChild
-                size="sm"
-                className="bg-primary text-primary-foreground hover:bg-accent"
-              >
-                <Link href={`/${locale}/projects/${project.slug}`}>
-                  {uiContent.projects?.viewCaseStudy ?? "View case"}
-                </Link>
-              </Button>
-              {project.links?.repo ? (
-                <Button asChild size="sm" variant="outline">
-                  <a href={project.links.repo} target="_blank" rel="noreferrer">
-                    {uiContent.projects?.repo ?? "Repo"}
-                  </a>
-                </Button>
-              ) : null}
-              {project.links?.demo ? (
-                <Button asChild size="sm" variant="outline">
-                  <a href={project.links.demo} target="_blank" rel="noreferrer">
-                    {uiContent.projects?.liveDemo ?? "Demo"}
-                  </a>
-                </Button>
-              ) : null}
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+                  </button>
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </Reveal>
 
-      {filteredProjects.length === 0 ? (
-        <p className="text-sm text-muted-foreground">
-          No projects match the current filters.
-        </p>
-      ) : null}
-    </section>
+        <div className="grid gap-4 md:grid-cols-2">
+          {filteredProjects.map((project) => (
+            <Reveal key={project.slug} className="h-full" delay={0.04}>
+              <Card className="h-full ring-1 ring-primary/40 flex flex-col">
+                <CardHeader>
+                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground">
+                    {project.oneLinerImpact ?? project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3 flex-1">
+                  <div className="flex flex-wrap gap-2">
+                    {(project.tags ?? []).map((tag) => (
+                      <Badge key={tag} variant="secondary">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  {project.stack?.length ? (
+                    <div className="flex flex-wrap gap-2">
+                      {project.stack.map((item) => (
+                        <Badge key={item} variant="outline">
+                          {item}
+                        </Badge>
+                      ))}
+                    </div>
+                  ) : null}
+                </CardContent>
+                <CardFooter className="flex flex-wrap gap-2 mt-auto">
+                  <Button
+                    asChild
+                    size="sm"
+                    className="bg-primary text-primary-foreground hover:bg-accent"
+                  >
+                    <Link href={`/${locale}/projects/${project.slug}`}>
+                      {uiContent.projects?.viewCaseStudy ?? "View case"}
+                    </Link>
+                  </Button>
+                  {project.links?.repo ? (
+                    <Button asChild size="sm" variant="outline">
+                      <a
+                        href={project.links.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {uiContent.projects?.repo ?? "Repo"}
+                      </a>
+                    </Button>
+                  ) : null}
+                  {project.links?.demo ? (
+                    <Button asChild size="sm" variant="outline">
+                      <a
+                        href={project.links.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {uiContent.projects?.liveDemo ?? "Demo"}
+                      </a>
+                    </Button>
+                  ) : null}
+                </CardFooter>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+
+        {filteredProjects.length === 0 ? (
+          <Reveal>
+            <p className="text-sm text-muted-foreground">
+              No projects match the current filters.
+            </p>
+          </Reveal>
+        ) : null}
+      </section>
+    </PageReveal>
   );
 }
